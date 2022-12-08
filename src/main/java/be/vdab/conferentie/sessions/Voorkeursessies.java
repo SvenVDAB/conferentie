@@ -17,6 +17,14 @@ public class Voorkeursessies implements Serializable {
         sessieIds.add(id);
     }
 
+    public void verwijder(long id) {
+        sessieIds.remove(id);
+    }
+
+    public void clear() {
+        sessieIds.clear();
+    }
+
     public Set<Long> getSessieIds() {
         return sessieIds;
     }

@@ -17,3 +17,11 @@ nav a:hover {
     color: goldenrod;
 }
 
+button {
+    background-color: lightgreen;
+    color: white;
+    border: lightgreen;
+    font-size: large;
+    height: 2em;
+}
+

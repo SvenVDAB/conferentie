@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments::head(title='Deelnemer')}"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/}">Beginpagina</a><br>
+<form th:object="${deelnemer}" method="post" th:action="@{/deelnameformulier}">
+  <input type="hidden" name="id" value="0">
+  <label>Voornaam:<span th:errors="*{voornaam}"></span>
+    <input th:field="*{voornaam}" autofocus required>
+  </label>
+  <label>Familienaam:<span th:errors="*{familienaam}"></span>
+    <input th:field="*{familienaam}" required>
+  </label>
+  <label>Email:<span th:errors="*{email}"></span>
+    <input th:field="*{email}" required>
+  </label>
+  <button>Toevoegen</button>
+</form>
+</body>
+</html>

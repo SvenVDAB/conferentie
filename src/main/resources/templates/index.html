@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments::head(title='Welkom')"></head>
+<head th:replace="~{fragments::head(title='Welkom')}"></head>
 <body>
 <h1 th:text="|${aantalTickets} ticket(s) beschikbaar|"></h1>
 <div><a th:href="@{/deelnameformulier}">Ik wil deelnemen</a></div>
@@ -10,10 +10,10 @@
 </nav>
 <br>
 <h2 th:text="${gekozenDatum}"></h2>
+<nav>
 <th:block th:each="sessie:${sessies}" th:object="${sessie}">
 <a th:href="@{/sessie/{id}(id=*{id})}" th:text="|*{uur} *{naam}|"></a><br>
 </th:block>
-<!--<a th:each="sessie:${sessies}" th:object="${sessie}"
-   th:href="@{/sessie/{id}(id=*{id})}" th:text="|*{uur} *{naam}|"></a>-->
+</nav>
 </body>
 </html>

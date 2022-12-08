@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments::head(title=${sessiedetails} ? ${sessiedetails.sessieNaam()} :
+'Sessie niet gevonden')}"></head>
+<body>
+<a th:href="@{/}">Beginpagina</a><br>
+<div th:if="not ${sessiedetails}" class="fout">Sessie niet gevonden:
+    <th:block th:text="${sessieId}"></th:block>
+</div>
+<th:block th:if="${sessiedetails}" th:object="${sessiedetails}">
+    Naam<br>
+    <b th:text="*{sessieNaam}"></b><br>
+    Uur<br>
+    <b th:text="*{uur}"></b><br>
+    Spreker<br>
+    <b th:text="|*{voornaam} *{familienaam()}, *{titel()} bij *{firma()}|"></b><br>
+</th:block>
+<br>
+<form method="post" th:action="@{/sessie/{sessieId}(sessieId=*{sessieId})}">
+    <button><b th:text="*{interessant} ? 'Geen interesse meer' : 'Interessant'"></b></button>
+</form>
+</body>
+</html>
+
+
