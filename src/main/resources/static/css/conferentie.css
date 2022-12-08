@@ -1,0 +1,19 @@
+.naastMekaar {
+    padding-right: 0.5em;
+    display: inline;
+}
+
+nav a {
+    padding-right: 1em;
+    text-decoration-line: none;
+    font-size: large;
+}
+
+nav a:visited {
+    color: blueviolet;
+}
+
+nav a:hover {
+    color: goldenrod;
+}
+
