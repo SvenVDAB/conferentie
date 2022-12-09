@@ -1,0 +1,15 @@
+klaarzetten project + domain classes toevoegen: 2u
+repositories toevoegen: 5u
+testen repositories toevoegen: 8u30min + 1u30min debuggen SessieRepositoryTest
+services toevoegen: 30min
+sessies toevoegen + test : 30min
+controller+thymeleaf eerste pagina: 2u40min
+controller+thymeleaf tweede pagina: 2u
+controller+thymeleaf derde pagina: 3u20min
+css + html verbeteren: 1u15min
+manueel testen: 1u
+validatie toevoegen: 45min
+DeelnemerServiceTest: 2u
+
+TOTAAL: 29 uur
+
