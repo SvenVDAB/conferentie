@@ -23,15 +23,17 @@ public class TicketRepository {
             return template.queryForObject(sql, Integer.class);
     }
 
-    public void lowerNrOfTicketsByOne() {
+    public int lowerNrOfTicketsByOne() {
         var sql = """
                 update tickets
                 set beschikbaar = beschikbaar - 1
                 where beschikbaar > 0;
                 """;
-        if (template.update(sql) == 0) {
+        var nrUpdates = template.update(sql);
+        if (nrUpdates == 0) {
             logger.error("Er waren geen tickets meer beschikbaar.");
             throw new GeenTicketsBeschikbaarException();
         }
+        return nrUpdates;
     }
 }
