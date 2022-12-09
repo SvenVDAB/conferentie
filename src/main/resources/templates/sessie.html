@@ -3,6 +3,7 @@
 <head th:replace="~{fragments::head(title=${sessiedetails} ? ${sessiedetails.sessieNaam()} :
 'Sessie niet gevonden')}"></head>
 <body>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
 <a th:href="@{/}">Beginpagina</a><br>
 <div th:if="not ${sessiedetails}" class="fout">Sessie niet gevonden:
     <th:block th:text="${sessieId}"></th:block>

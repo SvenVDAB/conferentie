@@ -6,10 +6,10 @@
 <div><a th:href="@{/deelnameformulier}">Ik wil deelnemen</a></div>
 <br>
 <nav class="naastMekaar">
-    <a th:each="datum:${datums}" th:object="${datum}" th:href="@{/{id}/sessieoverzicht(id=*{id})}" th:text="*{datum}"></a>
+    <a th:each="datum:${datums}" th:object="${datum}" th:href="@{/{id}/sessieoverzicht(id=*{id})}" th:text="*{{datum}}"></a>
 </nav>
 <br>
-<h2 th:text="${gekozenDatum}"></h2>
+<h2 th:text="${{gekozenDatum}}"></h2>
 <nav>
 <th:block th:each="sessie:${sessies}" th:object="${sessie}">
 <a th:href="@{/sessie/{id}(id=*{id})}" th:text="|*{uur} *{naam}|"></a><br>

@@ -1,9 +1,7 @@
 package be.vdab.conferentie.controllers;
 
 import be.vdab.conferentie.domain.Deelnemer;
-import be.vdab.conferentie.services.DagService;
 import be.vdab.conferentie.services.DeelnemerService;
-import be.vdab.conferentie.services.TicketService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -16,13 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/deelnameformulier")
 public class DeelnemerController {
     private final DeelnemerService deelnemerService;
-    private final TicketService ticketService;
-    private final DagService dagService;
 
-    public DeelnemerController(DeelnemerService deelnemerService, TicketService ticketService, DagService dagService) {
+    public DeelnemerController(DeelnemerService deelnemerService) {
         this.deelnemerService = deelnemerService;
-        this.ticketService = ticketService;
-        this.dagService = dagService;
     }
 
     @GetMapping
@@ -32,14 +26,11 @@ public class DeelnemerController {
     }
 
     @PostMapping
-    public ModelAndView deelnemerToevoegen(@Valid Deelnemer deelnemer, Errors errors) {
+    public String deelnemerToevoegen(@Valid Deelnemer deelnemer, Errors errors) {
         if (errors.hasErrors()) {
-            return new ModelAndView("deelnemer");
+            return "deelnemer";
         }
         deelnemerService.create(deelnemer);
-        var modelAndView = new ModelAndView("index");
-        modelAndView.addObject("aantalTickets", ticketService.findAantalBeschikbareTickets());
-        modelAndView.addObject("datums", dagService.findAll());
-        return modelAndView;
+        return "redirect:/";
     }
 }

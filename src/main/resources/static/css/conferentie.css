@@ -25,3 +25,10 @@ button {
     height: 2em;
 }
 
+.fout {
+    background-color: red;
+    color:white;
+    font-weight: bold;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

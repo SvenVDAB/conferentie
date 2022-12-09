@@ -6,17 +6,18 @@
     <title>Title</title>
 </head>
 <body>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
 <a th:href="@{/}">Beginpagina</a><br>
 <form th:object="${deelnemer}" method="post" th:action="@{/deelnameformulier}">
   <input type="hidden" name="id" value="0">
-  <label>Voornaam:<span th:errors="*{voornaam}"></span>
-    <input th:field="*{voornaam}" autofocus required>
+  <label>Voornaam:<span th:errors="*{voornaam}" class="fout"></span>
+    <input maxlength="30" th:field="*{voornaam}" autofocus required>
   </label>
-  <label>Familienaam:<span th:errors="*{familienaam}"></span>
-    <input th:field="*{familienaam}" required>
+  <label>Familienaam:<span th:errors="*{familienaam}" class="fout"></span>
+    <input maxlength="30" th:field="*{familienaam}" required>
   </label>
-  <label>Email:<span th:errors="*{email}"></span>
-    <input th:field="*{email}" required>
+  <label>Email:<span th:errors="*{email}" class="fout"></span>
+    <input type="email" maxlength="80" th:field="*{email}" required>
   </label>
   <button>Toevoegen</button>
 </form>
