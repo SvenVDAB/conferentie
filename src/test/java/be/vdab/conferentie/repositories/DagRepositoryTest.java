@@ -22,7 +22,7 @@ public class DagRepositoryTest extends AbstractTransactionalJUnit4SpringContextT
     void findAllGeeftAlleDagenGesorteerdOpDatum() {
         assertThat(repository.findAll())
                 .hasSize(countRowsInTable(DAGEN))
-                .extracting(Dag::getDatum)
+                .extracting(Dag::datum)
                 .isSorted();
     }
 }

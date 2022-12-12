@@ -37,7 +37,7 @@ public class SessieOverzichtController {
         modelAndView.addObject("aantalTickets", ticketService.findAantalBeschikbareTickets());
         modelAndView.addObject("datums", datums);
         modelAndView.addObject("gekozenDatum", datums.stream()
-                .filter(dag -> dag.getId() == dagId).findFirst().get().getDatum());
+                .filter(dag -> dag.id() == dagId).findFirst().get().datum());
         modelAndView.addObject("sessies", sessieService.findByDayId(dagId));
         return modelAndView;
     }

@@ -23,10 +23,6 @@ public class Deelnemer {
         this.email = email;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public String getVoornaam() {
         return voornaam;
     }

@@ -40,8 +40,4 @@ public class DeelnemerService {
         deelnemerVoorkeurSessieRepository.create(deelnemerId, voorkeursessies.getSessieIds());
         voorkeursessies.clear();
     }
-
-    public boolean exists(String email) {
-        return deelnemerRepository.exists(email);
-    }
 }

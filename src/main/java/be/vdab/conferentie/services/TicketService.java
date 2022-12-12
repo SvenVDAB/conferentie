@@ -16,9 +16,4 @@ public class TicketService {
     public int findAantalBeschikbareTickets() {
         return ticketRepository.findAantalBeschikbareTickets();
     }
-
-    @Transactional
-    public void lowerNrOfTicketsByOne() {
-        ticketRepository.lowerNrOfTicketsByOne();
-    }
 }
